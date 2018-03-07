@@ -119,6 +119,11 @@
       self.getAllTasks().done(function (allTasks) {
 
         var todayTasks = allTasks.filter(function (task) {
+
+          if (task.assignee_id !== 53461881) {
+            return false;
+          }
+
           var dueDate = task.due_date;
           if (!dueDate) {
             return false;
